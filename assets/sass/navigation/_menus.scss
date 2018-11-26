@@ -1,0 +1,130 @@
+.main-navigation {
+	clear: both;
+	display: block;
+	text-align: center;
+	background-color: $color-red;
+	@media screen and (min-width: $tabwidth) {
+		clear: none;
+		width: auto;
+	}
+	@media screen and (min-width: $deskwidth) {
+		text-align: left;
+	}
+	ul {
+		margin: 0 0;
+		padding: 0 0;
+		list-style: none;
+		li {
+			position: relative;
+		}
+	}
+	a {
+		display: block;
+		position: relative;
+		color: #FFF;
+		text-decoration: none;
+		@include transition(all ease-out .3s);
+	}
+	.menu {
+		@include transition(all ease 1s);
+		overflow: hidden;
+		display: block;
+		max-height: 0;
+		@media screen and (min-width: $tabwidth) {
+			max-height: 1000px;
+		}
+	}
+	.menu > li {
+		display: inline-block;
+		float: left;
+		&:hover > a {
+			opacity: .6;
+		}
+	}
+	.menu > li > a {
+		font-size: 16px;
+		line-height: 38px;
+		padding-left: 15px;
+		padding-right: 15px;
+		padding-bottom: 3px;
+	}
+
+	&.toggled .menu {
+		max-height: 1000px;
+	}
+
+	li.current_page_item:hover > a,
+	li.current-menu-item:hover > a,
+	li.current_page_ancestor:hover > a,
+	li.current-menu-ancestor:hover > a,
+	.current_page_item > a,
+	.current-menu-item > a,
+	.current_page_ancestor > a,
+	.current-menu-ancestor > a {
+		background: $color-dark-red;
+		opacity: 1;
+	}
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+	// background-color: $color-green;
+	ul.sub-menu {
+		background-color: rgba(255,255,255,.1);
+	}
+	
+}
+
+
+@media screen and (min-width: $tabwidth) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation ul {
+		// display: block;
+	}
+}
+button.menu-toggle {
+	border: 0px;
+	text-shadow: none;
+	background-color: #ccc;
+	color: #fff;
+	box-shadow: none;
+	width: auto;
+	display: inline-block;
+	margin: 10px auto;
+	border-radius: 0;
+	text-transform: uppercase;
+	font: {
+		
+		weight :300;
+		size: 20px;
+	}
+	
+	@media screen and (min-width: $tabwidth) {
+		display: none;
+	}
+}
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	.site-main & {
+		margin: 0 0 1.5em;
+		overflow: hidden;
+	}
+
+	.nav-previous {
+		float: left;
+		width: 50%;
+	}
+
+	.nav-next {
+		float: right;
+		text-align: right;
+		width: 50%;
+	}
+}

@@ -1,0 +1,165 @@
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+.plus-minus-toggle {
+    cursor: pointer;
+    height: 21px;
+    position: absolute;
+    width: 21px;
+    left:-10px;
+    top:40%;
+    z-index:2;
+
+    &:before,
+    &:after {
+      background: #eee;
+      content: '';
+      height: 5px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 21px;
+      transition: transform 500ms ease;
+    }
+
+    &:after {
+      transform-origin: center;
+    }
+
+    &.collapsed {
+      &:after {
+        transform: rotate(90deg);
+
+      }
+
+      &:before {
+        transform: rotate(180deg);
+      }
+    }
+}
+
+.top-header {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.head-left {
+	width: 40%;
+	@media screen and (min-width: $tabwidth) {
+		width: 30%;
+	}
+}
+.head-right {
+	width: 60%;
+	text-align: right;
+	@media screen and (min-width: $tabwidth) {
+		width: 70%;
+	}
+	span {
+		font-size: 18px;
+	}
+	.text1 {
+		font-weight: 600;
+	}
+	.fa-phone {
+		font-size: 12px;
+		position: relative;
+		top: -2px;
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+	.phone {
+		text-decoration: none;
+		color: $color-red;
+		font-weight: 700;
+	}
+}
+.banner-section {
+	width: 100%;
+	overflow: hidden;
+}
+.banner-section,.banner {
+	position: relative;
+	height: 100%;
+}
+.banner-image {
+	img {
+		width: 100%;
+		height: auto;
+		float: left;
+	}
+}
+.banner-caption {
+	width: 70%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	@media screen and (min-width: $tabwidth) {
+		width: 65%;
+	}
+	@media screen and (min-width: $midwidth) {
+		width: 55%;
+	}
+	.shape {
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+	.shape1:before,
+	.shape2:before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		left: -20%;
+		height: 100%;
+		transform: skew(-20deg);
+	}
+	.shape1:before {
+		width: 120%;
+		background: rgba(0,0,0,.65);
+	}
+	.shape2:before {
+		width: 130%;
+		background: rgba(0,0,0,.3);
+	}
+	.mid {
+		padding-left: 30px;
+		color: #FFF;
+		z-index: 10;
+		@include vertical-align(relative);
+	}
+	h2,h3 {
+		margin: 0 0;
+		line-height: 1.2;
+	}
+	h3 {
+		font-size: 16px;
+		font-weight: 400;
+		@media screen and (min-width: $midwidth) {
+			font-size: 2.5vw;
+		}
+		@media screen and (min-width: $deskwidth) {
+			font-size: 30px;
+		}
+	}
+	h2 {
+		font-size: 20px;
+		font-weight: 500;
+		@media screen and (min-width: $midwidth) {
+			font-size: 4vw;
+		}
+		@media screen and (min-width: $deskwidth) {
+			font-size: 50px;
+		}
+	}
+}
