@@ -8,8 +8,10 @@
 				<div class="animated fadeInUp wow" data-wow-delay=".4s">
 					<h3>Aliquam eleifend nam</h3>
 					<h2>Lorem ipsum dolor</h2>
-					<div class="button">
-						<a class="btn" href="#"><span>Learn More</span></a>
+					<div class="buttondiv">
+						<span class="swipe-effect">
+							<a class="btn" href="#"><span>Learn More</span></a>
+						</span>
 					</div>
 				</div>
 			</div>

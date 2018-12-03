@@ -1,15 +1,4 @@
-<?php
-/**
- * The header for theme.
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package ACStarter
- */
-
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -20,7 +9,6 @@
 <script defer src="<?php bloginfo( 'template_url' ); ?>/assets/svg-with-js/js/fontawesome-all.js"></script>
 <?php wp_head(); ?>
 </head>
-
 <?php
 $logo = get_custom_logo();
 $obj = get_queried_object();
@@ -32,7 +20,7 @@ $classes = ($is_home) ? 'homepage' : 'subpage';
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'acstarter' ); ?></a>
 	<header id="masthead" class="site-header clear">
 
-		<div class="top-header full-wrapper">
+		<div class="top-header wrapper">
 			<div class="head-left">
 			<?php if($logo) { ?>
 	            <div class="logo"><?php echo $logo;?></div>
@@ -50,8 +38,8 @@ $classes = ($is_home) ? 'homepage' : 'subpage';
     	</div>
 
     	<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'MENU', 'acstarter' ); ?></button>
-		<nav id="site-navigation" class="main-navigation full-wrapper" role="navigation">			
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+		<nav id="site-navigation" class="main-navigation clear" role="navigation">			
+			<div class="wrapper"><?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?></div>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
@@ -59,4 +47,4 @@ $classes = ($is_home) ? 'homepage' : 'subpage';
 	<?php get_template_part('inc/banner'); ?>
 	<?php } ?>
 
-	<div id="content" class="site-content wrapper">
+	<div id="content" class="site-content clear">
