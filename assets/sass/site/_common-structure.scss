@@ -32,6 +32,11 @@ h1,h2,h3,h4,h5,li,p,a,strong,small {
 	-webkit-hyphens: none;
 	hyphens: none;
 }
+h1 {font-size:30px;font-weight:700}
+h2 {font-size:25px;font-weight:700}
+h3 {font-size:20px;font-weight:700}
+h4 {font-size:18px;font-weight:700}
+h5 {font-size:16px;font-weight:700}
 body {
 	background: #FFF;
 	font-family: $font__main;
@@ -90,6 +95,9 @@ body {
 	@media screen and (min-width: $deskwidth) {
 		/*width: 1200px;*/
 	}
+}
+#primary {
+	min-height: 30em;
 }
 
 /* Logo */

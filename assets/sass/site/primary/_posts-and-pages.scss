@@ -435,6 +435,61 @@
 			padding-left: 10px;
 		}
 	}
+	.widget.footer-logo {
+		width: 100%;
+		@media screen and (min-width: $tabwidth) {
+			width: 60%;
+			float: right;
+			text-align: right;
+		}
+	}
+	.logodiv {
+		margin-top: 35px;
+	}
+}
+
+.menu-footer-menu-container {
+	ul {
+		display: block;
+		margin: 0 0;
+		padding: 0 0;
+		list-style: none;
+		position: relative;
+		@media screen and (min-width: $tabwidth) {
+			display: inline-block;
+			float: right;
+			right: -10px;
+		}
+		ul {
+			display: none;
+		}
+	}
+	li {
+		float: left;
+		position: relative;
+		padding-left: 11px;
+		padding-right: 10px;
+		a {
+			display: block;
+			position: relative;
+		}
+		&:before {
+			content:"";
+			display: block;
+			width: 1px;
+			height: 14px;
+			background: #FFF;
+			position: absolute;
+			top: 7px;
+			left: 0;
+		}
+	}
+	li:first-child {
+		&:before {
+			display: none;
+		}
+	}
+	
 }
 
 .widget-wrapper {

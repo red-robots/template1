@@ -21,6 +21,19 @@
 						<li>Email:<a>info@debtsquad.com</a></li>
 					</ul>
 				</div>
+
+				<div class="widget footer-logo">
+					<div class="logodiv"><a href="#"><img src="<?php echo get_bloginfo('template_url')?>/images/logo-dark.png" alt="" /></a></div>
+					<div class="copyright">
+						&copy; <?php echo date('Y');?> <?php echo get_bloginfo('name');?>
+					</div>
+					<div class="menu-footer-menu-container">
+						<ul id="footer-menu" class="menu">
+							<li><a href="#">Terms and Conditions</a></li>
+							<li><a href="#">Privacy Policys</a></li>
+						</ul>
+					</div>
+				</div>
 			</div>
 
 		</div><!-- wrapper -->
