@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="page-content-area wrapper">
+	<div id="primary" class="content-area wrapper">
 		<main id="main" class="site-main" role="main">
 
 		<?php
@@ -31,5 +31,5 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
-//get_sidebar();
+get_sidebar();
 get_footer();
