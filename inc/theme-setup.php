@@ -1,5 +1,6 @@
 <?php 
 if ( ! function_exists( 'acstarter_setup' ) ) :
+
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -8,6 +9,9 @@ if ( ! function_exists( 'acstarter_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function acstarter_setup() {
+
+  /* Add Home page automatically on theme activated */
+  auto_select_front_page();
   /*
    * Make theme available for translation.
    * Translations can be filed in the /languages/ directory.
@@ -78,9 +82,32 @@ function acstarter_setup() {
     'flex-width'  => true,
     'flex-height' => true,
   ) );
+
 }
 endif;
 add_action( 'after_setup_theme', 'acstarter_setup' );
+
+
+function auto_select_front_page() {
+  if( get_option('page_on_front')=='0' && get_option('show_on_front')=='posts' ){
+    // Create homepage
+    $home_post = get_posts(array('pagename'=>'home','post_status'=>'publish'));
+    $user_id = get_current_user_id();
+    if($home_post) {
+      $homepage = array(
+          'post_type'    => 'page',
+          'post_title'    => 'Home',
+          'post_content'  => '',
+          'post_status'   => 'publish',
+          'post_author'   => $user_id
+      ); 
+      $homepage_id =  wp_insert_post( $homepage );
+      update_post_meta($homepage_id, '_wp_page_template', 'front-page.php');
+      update_option('page_on_front',$homepage_id);
+      update_option('show_on_front','page',true);
+    }
+  }
+}
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.

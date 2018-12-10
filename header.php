@@ -12,8 +12,8 @@
 <?php
 $logo = get_custom_logo();
 $obj = get_queried_object();
-$is_home = ( isset($obj->post_name) && $obj->post_name=='home' ) ? true : false;
-$classes = ($is_home) ? 'homepage' : 'subpage';
+$is_home = ( is_front_page() ) ? true : false;
+$classes = ($is_home) ? 'home' : 'subpage';
 ?>
 <body <?php body_class($classes); ?>>
 <div id="page" class="site">

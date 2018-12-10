@@ -49,7 +49,56 @@ jQuery(document).ready(function ($) {
 	*
 	------------------------------------*/
 	$('.flexslider').flexslider({
-		animation: "slide",
+		animation: "fade",
+		pauseOnHover: false, 
+		slideshow: true,
+		animationLoop: true,  
+		slideshowSpeed: 7000,           
+		animationSpeed: 600,   
+		start: function(slider) {
+	        var count, current, slide;
+	        slide = slider.currentSlide;
+	        count = slider.count;
+	        current = slider.slides.eq(slider.currentSlide);
+			current.find('.captionfx').addClass('fadeInUp wow');
+			current.find('.shape1').addClass('fadeInLeft wow');
+			current.find('.shape2').addClass('fadeInLeft wow');
+      	},  
+		before:function(slider){
+			var current, first, next, prev;
+        	current = slider.slides.eq(slider.currentSlide);
+        	prev = slider.slides.eq(slider.currentSlide - 1);
+       	 	next = slider.slides.eq(slider.animatingTo);
+        	first = slider.slides.eq(0);
+
+        	prev.find('.captionfx').removeClass('fadeInUp');
+        	next.find('.captionfx').addClass('fadeInUp');
+        	first.find('.captionfx').removeClass('fadeInUp');
+
+        	prev.find('.shape1').removeClass('fadeInLeft');
+        	next.find('.shape1').addClass('fadeInLeft');
+        	first.find('.shape1').removeClass('fadeInLeft');
+
+        	prev.find('.shape2').removeClass('fadeInLeft');
+        	next.find('.shape2').addClass('fadeInLeft');
+        	first.find('.shape2').removeClass('fadeInLeft');
+
+		},
+		after: function(slider) {
+			var current, slide;
+			slide = slider.currentSlide;
+			current = slider.slides.eq(slider.currentSlide);
+			current.find('.captionfx').addClass('fadeInUp');
+			current.find('.shape1').addClass('fadeInLeft');
+			current.find('.shape2').addClass('fadeInLeft');
+		},
+		end: function(slider) {
+	        var first;
+	        first = slider.slides.eq(0);
+	        first.find('.captionfx').addClass('fadeInUp');
+	        first.find('.shape1').addClass('fadeInLeft');
+	        first.find('.shape1').addClass('fadeInLeft');
+	    }
 	}); // end register flexslider
 	
 	/*

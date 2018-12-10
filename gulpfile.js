@@ -191,6 +191,7 @@ gulp.task('styles', function () {
 gulp.task( 'vendorsJs', function() {
 	//gulp.src( jsVendorSRC )
 	gulp.src( [
+		'./assets/js/vendors/jquery.mousewheel.js',
 		'./assets/js/vendors/nicescroll.min.js',
 		'./assets/js/vendors/flexslider.js',
 		'./assets/js/vendors/blocks.js',
